@@ -15,4 +15,12 @@ contract Profile {
         profiles[msg.sender].push(User(msg.sender, _username, _bio));
     }
 
+   function getProfile() public view returns (User[] memory) {
+        return profiles[msg.sender];
+    }
+
+    function getUserAtIndex(uint _index) public view returns (User memory) {
+        return profiles[msg.sender][_index];
+    }
+
 }
